@@ -1,6 +1,7 @@
 import React from "react";
 import "./combine.scss";
 import { Login, Register } from "./index";
+import Navbar from "../navigation/navigation";
 
 class Combine extends React.Component {
   constructor(props) {
@@ -34,6 +35,10 @@ class Combine extends React.Component {
     const currentActive = isLogginActive ? "login" : "register";
     return (
       <div className="App">
+
+        {/* adding Navbar component */}
+        
+        <Navbar />
         <div className="login">
           <div className="container" ref={ref => (this.container = ref)}>
             {isLogginActive && (

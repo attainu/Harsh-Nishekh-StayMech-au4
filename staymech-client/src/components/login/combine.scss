@@ -4,6 +4,7 @@
 .App {
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Open Sans", sans-serif;
@@ -42,12 +43,12 @@
 //Login Main Container
 .login {
   width: 27em;
-  height: 40em;
+  height: 37em;
   //min-height: 44em;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5px;
+  // margin-top: 5px;
   position: relative;
   z-index: 99;
   .container {
@@ -69,7 +70,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 80%;
+    height: 75%;
     background-color: #3498db;
     width: 100%;
     position: absolute;

@@ -16,20 +16,20 @@
       .image {
         width: 21em;
         img {
-          width: 80%;
-          height: 80%;
+          width: 70%;
+          height: 70%;
         }
       }
 
       .image1{
         width: 21em;
         img {
-          width: 70%;
-          height: 60%;
+          width: 50%;
+          height: 50%;
         }
       }
       .form {
-        margin-top: 2em;
+        margin-top: 1em;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -39,20 +39,22 @@
           flex-direction: column;
           align-items: flex-start;
           width: fit-content;
+          margin-bottom: .6rem;
           label {
-            font-size: 20px;
+            font-size: 16px;
+            margin-bottom: .3rem;
           }
           input {
             margin-top: 6px;
             min-width: 18em;
             height: 35px;
             padding: 0px 10px;
-            font-size: 16px;
+            font-size: 14px;
             font-family: "Open Sans", sans-serif;
             background-color: #f3f3f3;
             border: 0;
             border-radius: 4px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             transition: all 250ms ease-in-out;
             // &:hover {
             //   //background-color: #ffffff;
@@ -72,6 +74,6 @@
       margin-top: 20px;
     }
     .footer1{
-        margin-top: 10px;
+        margin-top: 5px;
     }
   }
