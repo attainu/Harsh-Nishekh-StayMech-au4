@@ -28,13 +28,13 @@ class Home extends React.Component {
                                     <input type="button" value="Start Learning" className="btn btn-primary btn-lg" />
                                 </div>
                                 <div className="col">
-                                    <h1 className="mt-3">For Practicing</h1>
+                                    <h1 className="mt-3">For Contest</h1>
                                     <p >
                                         Join our platform to participate in a  <br />
                                     real-time quiz and test your knowledge <br />
                                     and work towards to improve.
                                 </p>
-                                    <input type="button" value="SignIn/signUp" className="btn btn-light btn-lg" />
+                                    <input type="button" value="SignIn/signUp" className="btn btn-primary btn-lg" />
                                 </div>
                             </div>
                         </div>
