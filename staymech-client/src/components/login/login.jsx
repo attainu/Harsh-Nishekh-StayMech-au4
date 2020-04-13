@@ -113,6 +113,9 @@ class Login extends React.Component {
               Login
             </button>
           </div>
+          <p>
+            Don't have account click <a href="/register">Here</a> To Register
+          </p>
         </div>
       </div>
     );

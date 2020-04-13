@@ -57,10 +57,10 @@ class Practice extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container">
+        <div>
           <h4>Tutorials</h4>
           <div class="row mb-5 mt-4 practice-tutorial">
-            <div class="col-sm-6 ">
+            <div class="col ">
               <div class="card shadow p-3 mb-5 bg-white rounded">
                 <div class="card-body">
                   <h5 class="card-title">Production</h5>
@@ -74,7 +74,7 @@ class Practice extends React.Component {
                 </div>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col">
               <div class="card shadow p-3 mb-5 bg-white rounded">
                 <div class="card-body">
                   <h5 class="card-title">Manufacturing</h5>

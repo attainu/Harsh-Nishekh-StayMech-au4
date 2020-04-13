@@ -8,6 +8,7 @@ import Register from "./components/login/register";
 import Login from "./components/login/login";
 import Home from "./components/home/home";
 import Practice from "./components/practice/practice";
+// import Contest  from ""
 
 class Routes extends React.Component {
   // creating router for nav bar

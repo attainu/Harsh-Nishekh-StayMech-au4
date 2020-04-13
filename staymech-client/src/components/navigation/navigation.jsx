@@ -23,7 +23,12 @@ class Navbar extends Component {
             <strong>{user ? `welcome ${user.name}` : ""}</strong>
           </span>
         </nav>
-        <nav className="logout" onClick={this.props.logout}>
+        <nav
+          className="logout"
+          onClick={() => {
+            if (window.confirm("Are you sure to logout ?")) this.props.logout();
+          }}
+        >
           <span className="navbar-text">
             <strong> Logout</strong>
           </span>
@@ -40,6 +45,17 @@ class Navbar extends Component {
           Login
         </a>
       </Fragment>
+    );
+    const contestUser = (
+      <a className="nav-link" href="/contest">
+        Contests
+      </a>
+    );
+
+    const contestGuest = (
+      <a className="nav-link" href="/login">
+        Contests
+      </a>
     );
     return (
       <div className="container ">
@@ -63,14 +79,12 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item ">
-                <a className="nav-link" href="/practice">
+                <a className="nav-link mr-2" href="/practice">
                   Practice
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/contest">
-                  Contests
-                </a>
+                {isAuthenticated ? contestUser : contestGuest}
               </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">

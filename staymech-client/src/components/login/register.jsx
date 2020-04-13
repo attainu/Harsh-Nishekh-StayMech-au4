@@ -83,7 +83,7 @@ class Register extends React.Component {
             </button>
           </div>
         ) : null}
-        <div className="base-container shadow p-3 mb-5 bg-white rounded mt-4 mx-auto ">
+        <div className="base-container shadow p-3 mb-5 bg-white rounded mt-1 mx-auto ">
           <div className="header">Register</div>
           <div className="content">
             <div className="image1">
@@ -124,6 +124,9 @@ class Register extends React.Component {
               Register
             </button>
           </div>
+          <p>
+            Already have Account Click <a href="/login">Here</a>To Login
+          </p>
         </div>
       </div>
     );
