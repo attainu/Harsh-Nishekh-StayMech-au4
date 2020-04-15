@@ -57,9 +57,16 @@ class Navbar extends Component {
         Contests
       </a>
     );
+
+    const Profile = (
+      <a className="nav-link" href="/profile">
+        profile
+      </a>
+    );
+
     return (
-      <div className="container ">
-        <nav className="navbar navbar-expand-lg mt-2 navigation">
+      <div className="Container ">
+        <nav className="navbar navbar-expand-lg  navigation">
           <a className="navbar-brand" href="/">
             <img src={logo} alt="logo" className="logo-img" />
             StayMech
@@ -78,14 +85,15 @@ class Navbar extends Component {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item ">
-                <a className="nav-link mr-2" href="/practice">
+              <li className="nav-item mr-4">
+                <a className="nav-link " href="/practice">
                   Practice
                 </a>
               </li>
-              <li className="nav-item">
+              <li className="nav-item mr-4">
                 {isAuthenticated ? contestUser : contestGuest}
               </li>
+              <li className="nav-item">{isAuthenticated ? Profile : ""}</li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
               {isAuthenticated ? authLink : guestLink}

@@ -65,57 +65,59 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <Navbar />
-        {this.state.msg ? (
-          <div className="alert alert-danger mx-auto" role="alert">
-            {this.state.msg}
-            <button
-              type="button"
-              class="close"
-              data-dismiss="alert"
-              aria-label="Close"
-              onClick={this.onClick}
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        ) : null}
-        <div className="base-container shadow p-3 mb-5 bg-white rounded mt-4 mx-auto">
-          <div className="header">Login</div>
-          <div className="content">
-            <div className="image">
-              <img src={loginImg} alt="img" />
+        <div className="container">
+          {this.state.msg ? (
+            <div className="alert alert-danger mx-auto" role="alert">
+              {this.state.msg}
+              <button
+                type="button"
+                class="close"
+                data-dismiss="alert"
+                aria-label="Close"
+                onClick={this.onClick}
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <div className="form">
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  onChange={this.onchange}
-                />
+          ) : null}
+          <div className="base-container shadow p-3 mb-5 bg-white rounded mt-4 mx-auto">
+            <div className="header">Login</div>
+            <div className="content">
+              <div className="image">
+                <img src={loginImg} alt="img" />
               </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  onChange={this.onchange}
-                />
+              <div className="form">
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="email"
+                    onChange={this.onchange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    onChange={this.onchange}
+                  />
+                </div>
               </div>
             </div>
+            <div className="footer">
+              <button type="submit" className="btn" onClick={this.onSubmit}>
+                Login
+              </button>
+            </div>
+            <p>
+              Don't have account click <a href="/register">Here</a> To Register
+            </p>
           </div>
-          <div className="footer">
-            <button type="submit" className="btn" onClick={this.onSubmit}>
-              Login
-            </button>
-          </div>
-          <p>
-            Don't have account click <a href="/register">Here</a> To Register
-          </p>
         </div>
       </div>
     );

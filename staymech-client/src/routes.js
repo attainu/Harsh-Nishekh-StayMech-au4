@@ -9,6 +9,7 @@ import Login from "./components/login/login";
 import Home from "./components/home/home";
 import Practice from "./components/practice/practice";
 // import Contest  from ""
+import Profile from "./components/profile/profile";
 
 class Routes extends React.Component {
   // creating router for nav bar
@@ -20,6 +21,7 @@ class Routes extends React.Component {
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/practice" component={Practice} />
+          <Route path="/profile" component={Profile} />
         </Switch>
       </Router>
     );
