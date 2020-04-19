@@ -14,3 +14,11 @@ export const clearErrors = () => {
     type: CLEAR_ERRORS,
   };
 };
+
+// //education details adding error
+// export const edErrors = (msg, status, id = null) => {
+//   return {
+//     type: EDUCATION_ERROR,
+//     payload: { msg, status, id },
+//   };
+// };

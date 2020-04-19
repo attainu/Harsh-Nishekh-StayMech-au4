@@ -8,6 +8,9 @@ const cors = require("cors");
 
 const userRouter = require("./routes/api/user");
 const authRouter = require("./routes/api/auth");
+const edRouter = require("./routes/api/education");
+const workRouter = require("./routes/api/work");
+const practiceRouter = require("./routes/api/practice");
 
 const app = express();
 
@@ -31,5 +34,8 @@ mongoose
 
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/profile", edRouter);
+app.use("/api/profile", workRouter);
+app.use("/api/practice", practiceRouter);
 
 module.exports = app;

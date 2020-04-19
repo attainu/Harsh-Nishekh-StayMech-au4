@@ -2,6 +2,7 @@ import React from "react";
 
 import "./practice.scss";
 import Navbar from "../navigation/navigation";
+import { Link } from "react-router-dom";
 
 /* eslint no-use-before-define: 0 */
 class Practice extends React.Component {
@@ -18,41 +19,45 @@ class Practice extends React.Component {
             <h4>Skills Available For Practice</h4>
             <div className="row shadow p-3 mb-5 bg-white rounded mt-4 practice-list">
               <div className="col">
-                <ul class="list-group mt-2 mb-2 ">
-                  <li class="list-group-item">
-                    <a href="">Production</a>{" "}
+                <ul className="list-group mt-2 mb-2 ">
+                  <li className="list-group-item">
+                    <Link to="/content/Theories Of Failure">
+                      Theories Of Failure
+                    </Link>
                   </li>
-                  <li class="list-group-item">
-                    <a href="">Manufacturing</a>{" "}
+                  <li className="list-group-item">
+                    <Link to="/content/Torsion">Torsion</Link>
                   </li>
-                  <li class="list-group-item">
-                    <a href=""> Design</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="col">
-                <ul class="list-group mt-2 mb-2">
-                  <li class="list-group-item">
-                    <a href="">Production</a>{" "}
-                  </li>
-                  <li class="list-group-item">
-                    <a href="">Manufacturing</a>{" "}
-                  </li>
-                  <li class="list-group-item">
-                    <a href=""> Design</a>
+                  <li className="list-group-item">
+                    <Link to="/content/Cast Iron">Cast Iron</Link>
                   </li>
                 </ul>
               </div>
               <div className="col">
-                <ul class="list-group mt-2 mb-2">
-                  <li class="list-group-item">
-                    <a href="">Production</a>{" "}
+                <ul className="list-group mt-2 mb-2">
+                  <li className="list-group-item">
+                    <Link to="/content/Preferred numbers">
+                      Preferred numbers
+                    </Link>
                   </li>
-                  <li class="list-group-item">
-                    <a href="">Manufacturing</a>{" "}
+                  <li className="list-group-item">
+                    <Link to="/content/Theories Of Failure">production</Link>
                   </li>
-                  <li class="list-group-item">
-                    <a href=""> Design</a>
+                  <li className="list-group-item">
+                    <Link to="/content/Springs">Springs</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="col">
+                <ul className="list-group mt-2 mb-2">
+                  <li className="list-group-item">
+                    <Link to="/content/Basic Som">Basic Som</Link>
+                  </li>
+                  <li className="list-group-item">
+                    <Link to="/content/Springs">Springs</Link>
+                  </li>
+                  <li className="list-group-item">
+                    <Link to="/content/Preferred numbers">Design</Link>
                   </li>
                 </ul>
               </div>
@@ -60,30 +65,30 @@ class Practice extends React.Component {
           </div>
           <div>
             <h4>Tutorials</h4>
-            <div class="row mb-5 mt-4 practice-tutorial">
-              <div class="col ">
-                <div class="card shadow p-3 mb-5 bg-white rounded">
-                  <div class="card-body">
-                    <h5 class="card-title">Production</h5>
-                    <p class="card-text">
+            <div className="row mb-5 mt-4 practice-tutorial">
+              <div className="col ">
+                <div className="card shadow p-3 mb-5 bg-white rounded">
+                  <div className="card-body">
+                    <h5 className="card-title">Production</h5>
+                    <p className="card-text">
                       With supporting text below as a natural lead-in to
                       additional content.
                     </p>
-                    <a href="#" class="btn btn-primary">
+                    <a href="#" className="btn btn-primary">
                       View Tutorial
                     </a>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="card shadow p-3 mb-5 bg-white rounded">
-                  <div class="card-body">
-                    <h5 class="card-title">Manufacturing</h5>
-                    <p class="card-text">
+              <div className="col">
+                <div className="card shadow p-3 mb-5 bg-white rounded">
+                  <div className="card-body">
+                    <h5 className="card-title">Manufacturing</h5>
+                    <p className="card-text">
                       With supporting text below as a natural lead-in to
                       additional content.
                     </p>
-                    <a href="#" class="btn btn-primary">
+                    <a href="#" className="btn btn-primary">
                       View Tutorial
                     </a>
                   </div>

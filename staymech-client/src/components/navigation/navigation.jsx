@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import logo from "../../cogs-solid.svg";
 
 import "./navigation.scss";
-// import history from "../../history";
+import history from "../../history";
 
 import { connect } from "react-redux";
 import { logout } from "../../redux/actions/authAction";
@@ -27,6 +27,7 @@ class Navbar extends Component {
           className="logout"
           onClick={() => {
             if (window.confirm("Are you sure to logout ?")) this.props.logout();
+            history.push("/");
           }}
         >
           <span className="navbar-text">
