@@ -49,4 +49,45 @@ router.get("/education", async (req, res) => {
   }
 });
 
+//route PUT api/Profile/education
+//@desc getting user education details
+//@acess Private
+router.put("/education/:id", async (req, res) => {
+  try {
+    let id = req.params.id;
+    let data = req.body;
+    await Education.findByIdAndUpdate(
+      { _id: id },
+      { $set: data },
+      { multi: true, new: true },
+      (err, education) => {
+        if (err) {
+          return res.status(500).json({ msg: err.message });
+        }
+        res.status(200).json({
+          education,
+        });
+      }
+    );
+  } catch (e) {
+    res.status(400).json({ msg: e.message });
+  }
+});
+
+router.delete("/education/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    await Education.remove({ _id: id }, (err, result) => {
+      if (err) {
+        return res.status(500).json({ msg: err.message });
+      }
+      res.status(200).json({
+        msg: "education details deleted",
+      });
+    });
+  } catch (e) {
+    res.status(400).json({ msg: e.message });
+  }
+});
+
 module.exports = router;

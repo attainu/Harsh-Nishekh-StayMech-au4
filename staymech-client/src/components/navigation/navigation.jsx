@@ -7,6 +7,7 @@ import history from "../../history";
 import { connect } from "react-redux";
 import { logout } from "../../redux/actions/authAction";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   static propTypes = {
@@ -48,7 +49,7 @@ class Navbar extends Component {
       </Fragment>
     );
     const contestUser = (
-      <a className="nav-link" href="/contest">
+      <a className="nav-link" href="/instructions">
         Contests
       </a>
     );

@@ -53,12 +53,6 @@ class Profile extends React.Component {
                   ))}
                 <Workmodal />
               </div>
-              <div className="shadow-sm p-3 mb-5 bg-white rounded">
-                <h4 className="mb-4">Contest History</h4>
-                <p className="text-muted text-center">
-                  You have not participated in any contests yet.
-                </p>
-              </div>
             </div>
           </div>
         </div>
