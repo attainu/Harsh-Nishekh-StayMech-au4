@@ -2,6 +2,7 @@ import React from "react";
 import loginImg from "../../login.svg";
 import "./style.scss";
 import Navbar from "../navigation/navigation";
+import { Helmet } from "react-helmet";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -66,6 +67,9 @@ class Login extends React.Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>Login-staymech</title>
+        </Helmet>
         <Navbar />
         <div className="container">
           {this.state.msg ? (

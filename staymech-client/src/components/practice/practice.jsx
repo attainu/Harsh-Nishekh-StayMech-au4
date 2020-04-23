@@ -3,12 +3,16 @@ import React from "react";
 import "./practice.scss";
 import Navbar from "../navigation/navigation";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 /* eslint no-use-before-define: 0 */
 class Practice extends React.Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>Practice-staymech</title>
+        </Helmet>
         <Navbar />
         <div className="container mt-5">
           <div className="shadow-sm p-3 mb-5 bg-white rounded practice-head">

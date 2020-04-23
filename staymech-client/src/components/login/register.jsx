@@ -3,6 +3,7 @@ import loginImg from "../../login.svg";
 import "./style.scss";
 import Navbar from "../navigation/navigation";
 import history from "../../history";
+import { Helmet } from "react-helmet";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -68,6 +69,9 @@ class Register extends React.Component {
   render() {
     return (
       <div>
+        <Helmet>
+          <title>Register-staymech</title>
+        </Helmet>
         <Navbar />
         <div className="container mt-4">
           {this.state.msg ? (

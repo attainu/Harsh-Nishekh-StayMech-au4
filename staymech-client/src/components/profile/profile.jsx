@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../navigation/navigation";
 import "./profile.scss";
+import { Helmet } from "react-helmet";
 
 import Edmodal from "../modal/education-modal";
 import Workmodal from "../modal/work-modal";
@@ -47,6 +48,9 @@ class Profile extends React.Component {
 
     return (
       <div>
+        <Helmet>
+          <title>Profile-staymech</title>
+        </Helmet>
         <Navbar />
         <div className="container">
           <div className="row">
