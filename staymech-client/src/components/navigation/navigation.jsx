@@ -7,7 +7,7 @@ import history from "../../history";
 import { connect } from "react-redux";
 import { logout } from "../../redux/actions/authAction";
 import PropTypes from "prop-types";
-
+import { Link } from "react-router-dom";
 class Navbar extends Component {
   static propTypes = {
     logout: PropTypes.func.isRequired,
@@ -39,30 +39,31 @@ class Navbar extends Component {
 
     const guestLink = (
       <Fragment>
-        <a className="nav-link" href="/register">
+        <Link to="/register" className="nav-link">
           Register
-        </a>
-        <a className="nav-link" href="/login">
+        </Link>
+
+        <Link to="/login" className="nav-link">
           Login
-        </a>
+        </Link>
       </Fragment>
     );
     const contestUser = (
-      <a className="nav-link" href="/instructions">
+      <Link to="/instructions" className="nav-link">
         Contests
-      </a>
+      </Link>
     );
 
     const contestGuest = (
-      <a className="nav-link" href="/login">
+      <Link to="/login" className="nav-link">
         Contests
-      </a>
+      </Link>
     );
 
     const Profile = (
-      <a className="nav-link" href="/profile">
-        profile
-      </a>
+      <Link to="/profile" className="nav-link">
+        Profile
+      </Link>
     );
 
     return (
@@ -87,9 +88,9 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item mr-4">
-                <a className="nav-link " href="/practice">
+                <Link to="/practice" className="nav-link">
                   Practice
-                </a>
+                </Link>
               </li>
               <li className="nav-item mr-4">
                 {isAuthenticated ? contestUser : contestGuest}

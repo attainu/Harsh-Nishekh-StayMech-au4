@@ -51,6 +51,7 @@ class Home extends React.Component {
                         type="button"
                         value="Go To Contest"
                         className="btn btn-primary btn-lg homebtn"
+                        onClick={() => history.push("/instructions")}
                       />
                     ) : (
                       <input
