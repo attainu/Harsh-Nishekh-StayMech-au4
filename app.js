@@ -5,7 +5,6 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const config = require("config");
 const cors = require("cors");
-const path = require("path");
 
 const userRouter = require("./routes/api/user");
 const authRouter = require("./routes/api/auth");
