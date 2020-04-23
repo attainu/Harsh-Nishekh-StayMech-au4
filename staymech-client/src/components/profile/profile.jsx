@@ -4,10 +4,42 @@ import "./profile.scss";
 
 import Edmodal from "../modal/education-modal";
 import Workmodal from "../modal/work-modal";
+import { loadEdDetails, educationDelete } from "../../redux/actions/edAction";
+import { loadWorkDetails, workDelete } from "../../redux/actions/workAction";
 
 import { connect } from "react-redux";
 
 class Profile extends React.Component {
+  //education detail delete
+  onSuccessDelete = () => {
+    this.props.loadEdDetails();
+  };
+
+  delete = (id) => {
+    const newDelete = {
+      id,
+      callback: this.onSuccessDelete,
+    };
+
+    this.props.educationDelete(newDelete);
+  };
+
+  //work detail delete
+  onSuccessWorkDelete = () => {
+    this.props.loadWorkDetails();
+  };
+  Delete = (id) => {
+    const newDelete = {
+      id,
+      callback: this.onSuccessWorkDelete,
+    };
+    this.props.workDelete(newDelete);
+  };
+
+  componentDidMount() {
+    this.props.loadEdDetails();
+    this.props.loadWorkDetails();
+  }
   render() {
     const { education } = this.props.details;
     const { user } = this.props.auth;
@@ -34,10 +66,22 @@ class Profile extends React.Component {
                 {education &&
                   education.map((detail, idx) => (
                     <div key={idx}>
-                      <h6>{detail.college}</h6>
-                      <p>
-                        {detail.program},{detail.degree}
-                      </p>
+                      <div className="row">
+                        <div className="col-md-9">
+                          <h5>{detail.college}</h5>
+                          <p>
+                            {detail.program},{detail.degree}
+                          </p>
+                        </div>
+                        <div className="col-md-3">
+                          <p>
+                            <span
+                              className="mdi mdi-delete"
+                              onClick={(e) => this.delete(detail.id)}
+                            ></span>
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 <Edmodal />
@@ -47,8 +91,20 @@ class Profile extends React.Component {
                 {work &&
                   work.map((detail, idx) => (
                     <div key={idx}>
-                      <h6>{detail.company}</h6>
-                      <p>{detail.role}</p>
+                      <div className="row">
+                        <div className="col-md-9">
+                          <h5>{detail.company}</h5>
+                          <p>{detail.role}</p>
+                        </div>
+                        <div className="col-md-3">
+                          <p>
+                            <span
+                              className="mdi mdi-delete"
+                              onClick={(e) => this.Delete(detail.id)}
+                            ></span>
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 <Workmodal />
@@ -67,4 +123,9 @@ const mapStateToProps = (state) => ({
   work: state.workDetails.work,
 });
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps, {
+  loadEdDetails,
+  educationDelete,
+  loadWorkDetails,
+  workDelete,
+})(Profile);

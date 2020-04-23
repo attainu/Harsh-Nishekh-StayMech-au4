@@ -48,4 +48,23 @@ router.get("/work", async (req, res) => {
   }
 });
 
+//route DELETE api/Profile/work/:id
+//@desc getting user work details
+//@acess Public
+router.delete("/work/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    await Work.remove({ _id: id }, (err, result) => {
+      if (err) {
+        return res.status(500).json({ msg: err.message });
+      }
+      res.status(200).json({
+        msg: "education details deleted",
+      });
+    });
+  } catch (e) {
+    res.status(400).json({ msg: e.message });
+  }
+});
+
 module.exports = router;

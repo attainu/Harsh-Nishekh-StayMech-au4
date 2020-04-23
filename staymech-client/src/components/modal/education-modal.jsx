@@ -18,18 +18,18 @@ class Edmodal extends React.Component {
 
   static propTypes = {
     education: PropTypes.func.isRequired,
-    loadEdDetails: PropTypes.func.isRequired,
   };
 
-  componentDidMount() {
-    this.props.loadEdDetails();
-  }
   handleModal() {
     this.setState({ show: !this.state.show });
   }
 
   onchange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+  };
+
+  onSaveSuccess = () => {
+    this.props.loadEdDetails();
   };
 
   save = () => {
@@ -40,14 +40,14 @@ class Edmodal extends React.Component {
       college,
       program,
       degree,
+      callback: this.onSaveSuccess,
     };
     this.props.education(newEducation);
-
     this.setState({ show: !this.state.show });
   };
 
   render() {
-    const data = this.props.data;
+    const { education } = this.props.data.details;
 
     return (
       <div>
@@ -57,11 +57,11 @@ class Edmodal extends React.Component {
             this.handleModal();
           }}
         >
-          {data ? "Add New" : "Add your education history"}
+          {education ? "Add New" : "Add your Education history"}
         </Button>
         <Modal
           show={this.state.show}
-          onHide={() => this.handleModal}
+          onHide={() => this.handleModal()}
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered

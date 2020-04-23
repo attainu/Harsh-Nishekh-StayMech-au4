@@ -1,37 +1,36 @@
 import axios from "axios";
 
 import { tokenConfig } from "./authAction";
-import { returnErrors } from "./errorAction";
+// import { returnErrors } from "./errorAction";
 
 import {
   ADD_WORK,
-  WORK_ERROR,
   FETCH_WORK_DETAILS_BEGIN,
   FETCH_WORK_DETAILS_SUCCESS,
   FETCH_WORK_DETAILS_FAILURE,
+  WORK_DELETE,
 } from "./types";
 
 //adding work details
 
-export const work = ({ company, role }) => (dispatch, getState) => {
+export const work = ({ company, role, callback }) => (dispatch, getState) => {
   const body = JSON.stringify({ company, role });
 
-  axios
-    .post("api/profile/work", body, tokenConfig(getState))
-    .then((res) =>
-      dispatch({
-        type: ADD_WORK,
-        payload: res.data,
-      })
-    )
-    .catch((err) => {
-      dispatch(
-        returnErrors(err.response.data, err.response.status, "WORK_ERROR")
-      );
-      dispatch({
-        type: WORK_ERROR,
-      });
+  axios.post("api/profile/work", body, tokenConfig(getState)).then((res) => {
+    dispatch({
+      type: ADD_WORK,
+      payload: res.data,
     });
+    callback();
+  });
+  // .catch((err) => {
+  //   dispatch(
+  //     returnErrors(err.response.data, err.response.status, "WORK_ERROR")
+  //   );
+  //   dispatch({
+  //     type: WORK_ERROR,
+  //   });
+  // });
 };
 
 // getting work details
@@ -70,3 +69,14 @@ function handleErrors(response) {
   }
   return response;
 }
+
+//deleting work details
+export const workDelete = ({ id, callback }) => (dispatch) => {
+  axios.delete(`/api/profile/work/${id}`).then((res) => {
+    dispatch({
+      type: WORK_DELETE,
+      payload: res.data,
+    });
+    callback();
+  });
+};

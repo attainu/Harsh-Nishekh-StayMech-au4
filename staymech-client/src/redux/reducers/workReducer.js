@@ -4,6 +4,7 @@ import {
   FETCH_WORK_DETAILS_BEGIN,
   FETCH_WORK_DETAILS_SUCCESS,
   FETCH_WORK_DETAILS_FAILURE,
+  WORK_DELETE,
 } from "../actions/types";
 
 const initialState = {
@@ -49,6 +50,12 @@ const workReducer = (state = initialState, action) => {
     case WORK_ERROR:
       return {
         ...state,
+      };
+
+    case WORK_DELETE:
+      return {
+        ...state,
+        ...action.payload,
       };
 
     default:

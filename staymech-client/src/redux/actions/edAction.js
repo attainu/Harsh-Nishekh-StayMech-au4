@@ -8,10 +8,11 @@ import {
   FETCH_ED_DETAILS_BEGIN,
   FETCH_ED_DETAILS_SUCCESS,
   FETCH_ED_DETAILS_FAILURE,
+  EDUCATION_DELETE,
 } from "./types";
 
 //adding education details
-export const education = ({ college, program, degree }) => (
+export const education = ({ college, program, degree, callback }) => (
   dispatch,
   getState
 ) => {
@@ -19,12 +20,13 @@ export const education = ({ college, program, degree }) => (
 
   axios
     .post("/api/profile/education", body, tokenConfig(getState))
-    .then((res) =>
+    .then((res) => {
       dispatch({
         type: ADD_EDUCATION,
         payload: res.data,
-      })
-    )
+      });
+      callback();
+    })
     .catch((err) => {
       dispatch(
         returnErrors(err.response.data, err.response.status, "EDUCATION_ERROR")
@@ -68,11 +70,13 @@ function handleErrors(response) {
   }
   return response;
 }
-// export const loadEdDetails = () => (dispatch) => {
-//   axios.get("/api/profile/education").then((res) =>
-//     dispatch({
-//       type: GET_EDUCATION,
-//       payload: res,
-//     })
-//   );
-// };
+
+export const educationDelete = ({ id, callback }) => (dispatch) => {
+  axios.delete(`/api/profile/education/${id}`).then((res) => {
+    dispatch({
+      type: EDUCATION_DELETE,
+      payload: res.data,
+    });
+    callback();
+  });
+};

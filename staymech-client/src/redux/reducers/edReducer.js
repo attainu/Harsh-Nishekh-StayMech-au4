@@ -4,6 +4,7 @@ import {
   FETCH_ED_DETAILS_BEGIN,
   FETCH_ED_DETAILS_SUCCESS,
   FETCH_ED_DETAILS_FAILURE,
+  EDUCATION_DELETE,
 } from "../actions/types";
 
 const initialState = {
@@ -46,6 +47,12 @@ const edReducer = (state = initialState, action) => {
     case EDUCATION_ERROR:
       return {
         ...state,
+      };
+
+    case EDUCATION_DELETE:
+      return {
+        ...state,
+        ...action.payload,
       };
 
     default:

@@ -21,16 +21,16 @@ class Workmodal extends React.Component {
     loadWorkDetails: PropTypes.func.isRequired,
   };
 
-  componentDidMount() {
-    this.props.loadWorkDetails();
-  }
-
   handleModal() {
     this.setState({ show: !this.state.show });
   }
 
   onchange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+  };
+
+  onSaveSuccess = () => {
+    this.props.loadWorkDetails();
   };
 
   save = () => {
@@ -40,6 +40,7 @@ class Workmodal extends React.Component {
     const newWork = {
       company,
       role,
+      callback: this.onSaveSuccess,
     };
 
     this.props.work(newWork);
@@ -48,7 +49,7 @@ class Workmodal extends React.Component {
   };
 
   render() {
-    const data = this.props.data;
+    const data = this.props.data.work.work;
     return (
       <div>
         <Button
