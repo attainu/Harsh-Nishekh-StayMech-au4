@@ -7,7 +7,6 @@ import history from "../../history";
 import { connect } from "react-redux";
 import { logout } from "../../redux/actions/authAction";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   static propTypes = {

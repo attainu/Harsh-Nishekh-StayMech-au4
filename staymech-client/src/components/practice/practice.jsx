@@ -63,39 +63,7 @@ class Practice extends React.Component {
               </div>
             </div>
           </div>
-          <div>
-            <h4>Tutorials</h4>
-            <div className="row mb-5 mt-4 practice-tutorial">
-              <div className="col ">
-                <div className="card shadow p-3 mb-5 bg-white rounded">
-                  <div className="card-body">
-                    <h5 className="card-title">Production</h5>
-                    <p className="card-text">
-                      With supporting text below as a natural lead-in to
-                      additional content.
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                      View Tutorial
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card shadow p-3 mb-5 bg-white rounded">
-                  <div className="card-body">
-                    <h5 className="card-title">Manufacturing</h5>
-                    <p className="card-text">
-                      With supporting text below as a natural lead-in to
-                      additional content.
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                      View Tutorial
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div></div>
         </div>
       </div>
     );

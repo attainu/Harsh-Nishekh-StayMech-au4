@@ -30,7 +30,7 @@ class QuizSummary extends React.Component {
     });
   }
   render() {
-    const { state, score } = this.props.location;
+    const { state } = this.props.location;
     let stats, remark;
     let userScore = this.state.score;
 
