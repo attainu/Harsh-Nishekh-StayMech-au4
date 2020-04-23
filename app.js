@@ -5,6 +5,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const config = require("config");
 const cors = require("cors");
+const path = require("path");
 
 const userRouter = require("./routes/api/user");
 const authRouter = require("./routes/api/auth");
@@ -37,5 +38,17 @@ app.use("/api/auth", authRouter);
 app.use("/api/profile", edRouter);
 app.use("/api/profile", workRouter);
 app.use("/api/practice", practiceRouter);
+
+//serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  //Set static folder
+  app.use(express.static("staymech-client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "staymech-client", "build", "index.html")
+    );
+  });
+}
 
 module.exports = app;
